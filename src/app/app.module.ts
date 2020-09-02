@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { LoginComponent } from './login/login.component';
-import { RegistrationComponent } from './registration/registration.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 
@@ -14,7 +13,6 @@ import { HomeComponent } from './home/home.component';
     AppComponent,
     AboutusComponent,
     LoginComponent,
-    RegistrationComponent,
     RegisterComponent,
     HomeComponent
   ],

@@ -8,10 +8,14 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 
 const routes: Routes = [{ path: 'login', component: LoginComponent },
 { path: 'register', component: RegisterComponent },
-{ path: 'aboutus', component: AboutusComponent },
-{ path: 'home', component: HomeComponent },
 
-{ path: '', redirectTo: '/home', pathMatch: 'full' },
+{
+  path: 'home', component: HomeComponent, children: [
+    { path: 'aboutus', component: AboutusComponent }
+  ]
+},
+
+{ path: '', redirectTo: '/login', pathMatch: 'full' },
 { path: '**', component: PageNotFoundComponent }];
 
 @NgModule({

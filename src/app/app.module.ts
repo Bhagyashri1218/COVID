@@ -15,6 +15,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
 import { ContactusComponent } from './contactus/contactus.component';
+import { NationalComponent } from './national/national.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +26,8 @@ import { ContactusComponent } from './contactus/contactus.component';
     HomeComponent,
     PageNotFoundComponent,
     ForgetpasswordComponent,
-    ContactusComponent
+    NationalComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,8 @@ import { ContactusComponent } from './contactus/contactus.component';
     FontAwesomeModule,
     NgbModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

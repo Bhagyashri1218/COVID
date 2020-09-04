@@ -12,11 +12,11 @@ export class RegisterComponent implements OnInit {
   public uiInvalid = false;
 
   public fbFormGroup = this.fb.group({
-    username: ['', Validators.required],
+    username: ['', Validators.required, Validators.maxLength(15)],
     email: ['', Validators.required],
-    mobile: ['', Validators.required],
-    password: ['', Validators.required],
-    passwordConfirm: ['', Validators.required],
+    mobile: ['', Validators.required, Validators.maxLength(10)],
+    new_password: ['', Validators.required, Validators.minLength(3), Validators.maxLength(8)],
+    con_password: ['', Validators.required],
   })
 
   constructor(private router: Router, private fb: FormBuilder, private http: HttpClient) { }
@@ -26,13 +26,14 @@ export class RegisterComponent implements OnInit {
 
   async submit() {
 
+
     const data = this.fbFormGroup.value;
     const url = "http://localhost:3000/adduser";
     await this.http.post(url, data).toPromise();
 
-    await this.fbFormGroup.reset;
-
+    this.fbFormGroup.reset;
     await this.router.navigate(['login']);
+
 
   }
 

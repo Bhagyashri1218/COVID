@@ -27,8 +27,6 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-
-
     const data = this.fbFormGroup.value;
 
     if (data.username === 'angular' && data.password == 'js2') {

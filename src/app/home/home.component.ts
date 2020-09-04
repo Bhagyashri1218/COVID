@@ -16,14 +16,17 @@ export class HomeComponent implements OnInit {
     }
   }
   aboutUs() {
-    this.router.navigate(['/home/aboutus']);
+    this.router.navigate(['aboutus']);
   }
 
   contactUs() {
-    this.router.navigate(['/home/contactus']);
+    this.router.navigate(['contactus']);
   }
   logOut() {
     sessionStorage.removeItem('sid');
     this.router.navigate(['login']);
+  }
+  goto() {
+    this.router.navigate(['national']);
   }
 }

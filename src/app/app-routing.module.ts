@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
 import { ContactusComponent } from './contactus/contactus.component';
+import { NationalComponent } from './national/national.component';
 
 const routes: Routes = [{
   path: 'login', component: LoginComponent
@@ -14,11 +15,11 @@ const routes: Routes = [{
 { path: 'forgetpassword', component: ForgetpasswordComponent },
 { path: 'register', component: RegisterComponent },
 {
-  path: 'home', component: HomeComponent, children: [
-    { path: 'aboutus', component: AboutusComponent },
-    { path: 'contactus', component: ContactusComponent }
-  ]
+  path: 'home', component: HomeComponent
 },
+{ path: 'aboutus', component: AboutusComponent },
+{ path: 'contactus', component: ContactusComponent },
+{ path: 'national', component: NationalComponent },
 
 { path: '', redirectTo: '/login', pathMatch: 'full' },
 { path: '**', component: PageNotFoundComponent }];

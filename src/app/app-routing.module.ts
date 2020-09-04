@@ -6,16 +6,17 @@ import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
+import { ContactusComponent } from './contactus/contactus.component';
 
 const routes: Routes = [{
-  path: 'login', component: LoginComponent, children: [
-    { path: 'forgetpassword', component: ForgetpasswordComponent },
-    { path: 'register', component: RegisterComponent }
-  ]
+  path: 'login', component: LoginComponent
 },
+{ path: 'forgetpassword', component: ForgetpasswordComponent },
+{ path: 'register', component: RegisterComponent },
 {
   path: 'home', component: HomeComponent, children: [
-    { path: 'aboutus', component: AboutusComponent }
+    { path: 'aboutus', component: AboutusComponent },
+    { path: 'contactus', component: ContactusComponent }
   ]
 },
 

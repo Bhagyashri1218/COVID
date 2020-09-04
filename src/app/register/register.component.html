@@ -1,2 +1,61 @@
-<button>Register</button>
-<button>Go To Login</button>
+<div class="container-fluid">
+    <div class="row  d-flex flex-column
+    justify-content-center align-items-center" style="height: 100vh; background: radial-gradient(white,skyblue);">
+
+        <div class="row d-flex flex-column pt-2">
+            <div class="alert alert-danger" role="alert" *ngIf="uiInvalid">
+                Somethig is wrong, Please check username and password again.....
+            </div>
+            <div class="row d-flex justify-content-center">
+                <h3>Login Here</h3>
+            </div>
+            <div class="row d-flex flex-column " style="margin-bottom:2vh;" [formGroup]="fbFormGroup">
+                <div class=" col input-group mt-2 pt-2">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">@</span>
+                    </div>
+                    <input type="text" class="form-control rounded-right" formControlName="username" required>
+                    <div class="invalid-feedback">
+                        Please choose a username.
+                    </div>
+                </div>
+
+                <div class=" col input-group mt-2 pt-2">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">@</span>
+                    </div>
+                    <input type="text" class="form-control rounded-right" formControlName="email" required>
+                    <div class="invalid-feedback">
+                        Please choose a email.
+                    </div>
+                </div>
+
+                <div class=" col input-group mt-2 pt-2">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">@</span>
+                    </div>
+                    <input type="text" class="form-control rounded-right" formControlName="mobile" required>
+                    <div class="invalid-feedback">
+                        Please choose a mobile.
+                    </div>
+                </div>
+
+                <div class=" col input-group mt-2 pt-2">
+                    <input type="password" class="form-control" formControlName="password" placeholder="Enter Password"
+                        formControlName="password" required>
+                </div>
+
+                <div class=" col input-group mt-2 pt-2">
+                    <input type="password" class="form-control" formControlName="passwordConfirm"
+                        placeholder="Confirm Password" formControlName="password" required>
+                </div>
+
+                <div class=" col input-group mt-2 pt-2 justify-content-center">
+                    <button (click)="submit()" class="btn btn-outline-dark">Submit</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

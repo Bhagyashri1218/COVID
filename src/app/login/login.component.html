@@ -1,12 +1,12 @@
 <div class="container-fluid">
-    <div class="row bg-warning d-flex flex-column
-    justify-content-center align-items-center" style="height: 100vh;">
+    <div class="row  d-flex flex-column
+    justify-content-center align-items-center" style="height: 100vh; background: radial-gradient(white,skyblue);">
         <div>
             <fa-icon [icon]="faUser" style="font-size: 64px;"></fa-icon>
         </div>
         <div class="row d-flex flex-column pt-2">
             <div class="alert alert-danger" role="alert" *ngIf="uiInvalid">
-                Somethig is wrong, Please check username and password again.....
+                Please check username and password again.....
             </div>
             <div class="row d-flex justify-content-center">
                 <h3>Login Here</h3>
@@ -30,12 +30,10 @@
                         [disabled]="!fbFormGroup.valid">Login</button>
                 </div>
                 <div class=" col input-group mt-2 pt-2 justify-content-center">
-                    <a routerLink="/login/forgetpassword" style="color: black; font-size:20px;">
-                        Forget Password</a>
+                    <button (click)="forget()" class="btn btn-outline-dark">Forget Password</button>
                 </div>
                 <div class=" col input-group mt-2 pt-2 justify-content-center">
-                    <a routerLink="/login/register" style="color: black; font-size:20px;">
-                        Register Here</a>
+                    <button (click)="register()" class="btn btn-outline-dark">Register Here</button>
                 </div>
             </div>
 
@@ -43,4 +41,3 @@
 
     </div>
 </div>
-<router-outlet></router-outlet>

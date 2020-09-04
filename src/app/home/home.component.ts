@@ -15,10 +15,15 @@ export class HomeComponent implements OnInit {
       this.router.navigate(['login']);
     }
   }
+  aboutUs() {
+    this.router.navigate(['/home/aboutus']);
+  }
 
+  contactUs() {
+    this.router.navigate(['/home/contactus']);
+  }
   logOut() {
     sessionStorage.removeItem('sid');
     this.router.navigate(['login']);
   }
-
 }

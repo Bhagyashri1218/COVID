@@ -5,10 +5,14 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
 
-const routes: Routes = [{ path: 'login', component: LoginComponent },
-{ path: 'register', component: RegisterComponent },
-
+const routes: Routes = [{
+  path: 'login', component: LoginComponent, children: [
+    { path: 'forgetpassword', component: ForgetpasswordComponent },
+    { path: 'register', component: RegisterComponent }
+  ]
+},
 {
   path: 'home', component: HomeComponent, children: [
     { path: 'aboutus', component: AboutusComponent }

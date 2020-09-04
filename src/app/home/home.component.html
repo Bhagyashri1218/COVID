@@ -1,4 +1,20 @@
-<p>home works!</p>
-<a routerLink="/home/aboutus">About Us</a>
+<nav class="navbar navbar-expand-sm navbar-dark bg-danger">
+    <a href="#" class="navbar-brand">
+        COVID Tracker
+    </a>
+    <ul class="navbar-nav ml-auto">
+
+        <li class="nav-item">
+            <a routerlink="/home/aboutus" class="nav-link">About Us</a>
+        </li>
+        <li class="nav-item">
+            <a routerlink="/" class="nav-link">contact us</a>
+        </li>
+
+        <li class="nav-item">
+            <button (click)="logOut()" class="btn btn-outline-dark">Log out</button>
+        </li>
+
+    </ul>
+</nav>
 <router-outlet></router-outlet>
-<button (click)="logOut()">Log out</button>

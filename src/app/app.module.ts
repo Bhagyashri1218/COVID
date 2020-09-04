@@ -13,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ForgetpasswordComponent
   ],
   imports: [
     BrowserModule,

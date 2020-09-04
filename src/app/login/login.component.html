@@ -1,14 +1,46 @@
 <div class="container-fluid">
-    <div class="row bg-info d-flex flex-column
+    <div class="row bg-warning d-flex flex-column
     justify-content-center align-items-center" style="height: 100vh;">
         <div>
-            <fa-icon [icon]="faUser" style="font-size: 48px;"></fa-icon>
-
+            <fa-icon [icon]="faUser" style="font-size: 64px;"></fa-icon>
         </div>
         <div class="row d-flex flex-column pt-2">
-            <h5>Login Here</h5>
-            <button (click)="login()">Login</button>
+            <div class="alert alert-danger" role="alert" *ngIf="uiInvalid">
+                Somethig is wrong, Please check username and password again.....
+            </div>
+            <div class="row d-flex justify-content-center">
+                <h3>Login Here</h3>
+            </div>
+            <div class="row d-flex flex-column " style="margin-bottom:2vh;" [formGroup]="fbFormGroup">
+                <div class=" col input-group mt-2 pt-2">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">@</span>
+                    </div>
+                    <input type="text" class="form-control rounded-right" formControlName="username" required>
+                    <div class="invalid-feedback">
+                        Please choose a username.
+                    </div>
+                </div>
+                <div class=" col input-group mt-2 pt-2">
+                    <input type="password" class="form-control" formControlName="password" placeholder="Enter Password"
+                        formControlName="password" required>
+                </div>
+                <div class=" col input-group mt-2 pt-2 d-flex justify-content-center">
+                    <button (click)="login()" class="btn btn-dark " style="width: 50%;"
+                        [disabled]="!fbFormGroup.valid">Login</button>
+                </div>
+                <div class=" col input-group mt-2 pt-2 justify-content-center">
+                    <a routerLink="/login/forgetpassword" style="color: black; font-size:20px;">
+                        Forget Password</a>
+                </div>
+                <div class=" col input-group mt-2 pt-2 justify-content-center">
+                    <a routerLink="/login/register" style="color: black; font-size:20px;">
+                        Register Here</a>
+                </div>
+            </div>
+
         </div>
 
     </div>
 </div>
+<router-outlet></router-outlet>

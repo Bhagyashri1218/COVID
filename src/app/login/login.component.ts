@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { FormBuilder, Validators } from '@angular/forms';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -8,13 +9,27 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 })
 export class LoginComponent implements OnInit {
   public faUser = faUser;
-  constructor(private router: Router) { }
+  public uiInvalid = false;
+  public fbFormGroup = this.fb.group({
+    username: ['', Validators.required],
+    password: ['', Validators.required],
+  })
+  constructor(private router: Router, private fb: FormBuilder) { }
 
   ngOnInit(): void { }
 
   login() {
-    sessionStorage.setItem('sid', "true");
-    this.router.navigate(['home']);
+
+
+    const data = this.fbFormGroup.value;
+
+    if (data.username === 'angular' && data.password == 'js2') {
+      sessionStorage.setItem('sid', "true");
+      this.router.navigate(['home']);
+    }
+    else {
+      this.uiInvalid = true;
+    }
   }
 
 }

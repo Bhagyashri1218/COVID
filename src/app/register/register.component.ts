@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -9,6 +10,7 @@ import { Router } from '@angular/router';
 export class RegisterComponent implements OnInit {
 
   public uiInvalid = false;
+
   public fbFormGroup = this.fb.group({
     username: ['', Validators.required],
     email: ['', Validators.required],
@@ -16,13 +18,22 @@ export class RegisterComponent implements OnInit {
     password: ['', Validators.required],
     passwordConfirm: ['', Validators.required],
   })
-  constructor(private router: Router, private fb: FormBuilder) { }
+
+  constructor(private router: Router, private fb: FormBuilder, private http: HttpClient) { }
 
   ngOnInit(): void {
   }
 
-  submit() {
-    this.router.navigate(['login']);
+  async submit() {
+
+    const data = this.fbFormGroup.value;
+    const url = "http://localhost:3000/adduser";
+    await this.http.post(url, data).toPromise();
+
+    await this.fbFormGroup.reset;
+
+    await this.router.navigate(['login']);
+
   }
 
 }
